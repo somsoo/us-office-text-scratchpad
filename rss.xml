@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Office Markdown Scratchpad &amp; Text Utilities - Local Productivity Tool</title>
+  <link>https://us-office-text-scratchpad.enjoy-onepage.com/</link>
+  <description>All-in-one local markdown previewer, text case converter, smart team randomizer, and global timezone scheduler. 100% private and client-side.</description>
+  <language>en-us</language>
+  <atom:link href="https://us-office-text-scratchpad.enjoy-onepage.com/rss.xml" rel="self" type="application/rss+xml" />
+  <lastBuildDate>Tue, 29 Sep 2026 06:02:30 +0000</lastBuildDate>
+  <item>
+    <title>Office Text Productivity &amp; Team Utilities Master Guide</title>
+    <link>https://us-office-text-scratchpad.enjoy-onepage.com/guides/guide.html</link>
+    <guid isPermaLink="true">https://us-office-text-scratchpad.enjoy-onepage.com/guides/guide.html</guid>
+    <description>Office Text Productivity &amp; Team Utilities Master Guide</description>
+    <pubDate>Mon, 21 Sep 2026 22:22:55 +0900</pubDate>
+  </item>
+  <item>
+    <title>Terms of Service - Markdown Scratchpad</title>
+    <link>https://us-office-text-scratchpad.enjoy-onepage.com/terms.html</link>
+    <guid isPermaLink="true">https://us-office-text-scratchpad.enjoy-onepage.com/terms.html</guid>
+    <description>Terms of Service - Markdown Scratchpad</description>
+    <pubDate>Mon, 21 Sep 2026 22:22:55 +0900</pubDate>
+  </item>
+  <item>
+    <title>Privacy Policy - Markdown Scratchpad</title>
+    <link>https://us-office-text-scratchpad.enjoy-onepage.com/privacy.html</link>
+    <guid isPermaLink="true">https://us-office-text-scratchpad.enjoy-onepage.com/privacy.html</guid>
+    <description>Privacy Policy - Markdown Scratchpad</description>
+    <pubDate>Mon, 21 Sep 2026 22:22:55 +0900</pubDate>
+  </item>
+</channel>
+</rss>
