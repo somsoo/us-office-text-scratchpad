@@ -1,434 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Office Text Scratchpad | Markdown Preview &amp; Text Utilities</title>
-    <meta name="description" content="All-in-one local markdown previewer, text case converter, smart team randomizer, and global timezone scheduler. 100% private and client-side.">
-    <link rel="canonical" href="https://us-office-text-scratchpad.enjoy-onepage.com/">
-    <link rel="icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta property="og:title" content="Office Markdown Scratchpad & Text Utilities">
-    <meta property="og:description" content="Local markdown previewer, text case converter, smart team randomizer, and global timezone scheduler.">
-    <meta property="og:image" content="https://us-office-text-scratchpad.enjoy-onepage.com/og-image.png">
-    <meta property="og:url" content="https://us-office-text-scratchpad.enjoy-onepage.com/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Office Markdown Scratchpad & Text Utilities">
-    <meta name="twitter:description" content="100% local client-side office productivity utilities">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style id="mobile-hardening-shield">
-        html, body { max-width: 100%; overflow-x: hidden; }
-        .manual-ad-box { width: 100%; max-width: 960px; overflow: hidden; margin: 8px auto 16px; }
-        .manual-ad-box ins { max-width: 100% !important; overflow: hidden !important; }
-    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106" crossorigin="anonymous"></script>
-    <script type="application/ld+json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Office Text Scratchpad | Markdown Preview &amp; Text Utilities</title>
+<meta name="description" content="Draft markdown with a live preview, convert text case, split people into random teams and compare meeting times across time zones. Runs in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://us-office-text-scratchpad.enjoy-onepage.com/">
+<meta name="theme-color" content="#312e81">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Office Text Scratchpad">
+<meta property="og:title" content="Office Text Scratchpad | Markdown Preview &amp; Text Utilities">
+<meta property="og:description" content="Draft markdown with a live preview, convert text case, split people into random teams and compare meeting times across time zones. Runs in your browser.">
+<meta property="og:url" content="https://us-office-text-scratchpad.enjoy-onepage.com/">
+<meta property="og:image" content="https://us-office-text-scratchpad.enjoy-onepage.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Office Text Scratchpad | Markdown Preview &amp; Text Utilities">
+<meta name="twitter:description" content="Draft markdown with a live preview, convert text case, split people into random teams and compare meeting times across time zones. Runs in your browser.">
+<meta name="twitter:image" content="https://us-office-text-scratchpad.enjoy-onepage.com/og-image.png">
+<link rel="alternate" type="application/rss+xml" title="Office Text Scratchpad RSS" href="https://us-office-text-scratchpad.enjoy-onepage.com/rss.xml">
+<link rel="sitemap" type="application/xml" href="https://us-office-text-scratchpad.enjoy-onepage.com/sitemap.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Office Markdown Scratchpad & Text Utilities",
-      "inLanguage": "en-US",
+      "@id": "https://us-office-text-scratchpad.enjoy-onepage.com/#webapp",
+      "name": "Office Text Scratchpad",
+      "url": "https://us-office-text-scratchpad.enjoy-onepage.com/",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "All",
-      "offers": { "@type": "Offer", "price": "0" }
+      "inLanguage": "en",
+      "description": "A free office scratchpad: markdown with a live preview, text case conversion, random team splitting and a meeting time converter across time zones. Everything runs in your browser.",
+      "image": "https://us-office-text-scratchpad.enjoy-onepage.com/og-image.png",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://us-office-text-scratchpad.enjoy-onepage.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is my markdown draft saved?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, in this browser only. The draft is kept in your browser's local storage so it survives a refresh, and it is never sent anywhere. Press Clear draft to delete it; you can undo that right away." } },
+        { "@type": "Question", "name": "Which markdown does the preview support?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Headings, bold, italic, strikethrough, inline code, code blocks, bulleted, numbered and task lists, quotes, horizontal rules and links that start with http or https. Raw HTML is shown as plain text so nothing you paste can run on the page." } },
+        { "@type": "Question", "name": "How are random teams made?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The names are shuffled with the Fisher-Yates method using your browser's cryptographic random number generator, then dealt into the teams one by one, so team sizes differ by at most one." } },
+        { "@type": "Question", "name": "How does the time zone converter handle daylight saving time?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You choose the time zone the meeting time is written in, and each city's time and abbreviation, such as EDT or EST, come from your browser's time zone database for that exact date. If the time falls in a daylight saving gap or overlap, the page tells you." } },
+        { "@type": "Question", "name": "How is reading time estimated?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Reading time is the word count divided by 238 words per minute, the average silent reading rate for adults reading English non-fiction in a 2019 review of 190 studies by Marc Brysbaert." } }
+      ]
     }
-    </script>
-    <link rel="alternate" type="application/rss+xml" title="Office Text Scratchpad | Markdown Preview &amp; Text Utilities" href="https://us-office-text-scratchpad.enjoy-onepage.com/rss.xml">
-    <link rel="sitemap" type="application/xml" href="https://us-office-text-scratchpad.enjoy-onepage.com/sitemap.xml">
+  ]
+}
+</script>
+<!-- ADSENSE START: loader -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106" crossorigin="anonymous"></script>
+<!-- ADSENSE END: loader -->
+<style>
+:root{--bg:#f5f5fb;--card:#fff;--ink:#1e1b4b;--muted:#4b5068;--line:#e0e0ef;--r:#b91c1c;--accent:#4338ca}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.header{background:linear-gradient(135deg,#1e1b4b,#3730a3);color:#fff;text-align:center;padding:26px 16px 22px}
+.header h1{margin:0;font-size:1.7rem}
+.header-sub{margin-top:6px;font-size:.95rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{max-width:1080px;margin:0 auto;padding:12px 14px 8px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:6px 0 14px}
+.tab{font:inherit;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:8px 14px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+.grid2{display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:1024px){.grid2{grid-template-columns:1fr 1fr;align-items:start}.result{position:sticky;top:12px}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin:14px 0}
+.grid2 .card{margin:0}
+.card h2{font-size:1.15rem;margin:4px 0 10px}
+.lbl{display:block;font-weight:600;margin:10px 0 4px;font-size:.95rem}
+textarea{width:100%;min-height:240px;font:inherit;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.95rem;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);resize:vertical}
+input[type=text],input[type=datetime-local],select{width:100%;font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>div{flex:1 1 150px;min-width:0}
+.btn{font:inherit;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:8px 13px;cursor:pointer}
+.btn.sm{padding:4px 10px;font-size:.88rem;border-radius:8px}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.err{color:var(--r);font-weight:600;margin:8px 0 0}
+.hint{font-size:.86rem;color:var(--muted);margin:6px 0}
+.stats{font-size:.88rem;color:var(--muted);font-variant-numeric:tabular-nums;margin:0 0 8px}
+.out{min-height:240px;max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:#fff;overflow-wrap:anywhere}
+.out pre{background:#f4f4fa;border-radius:8px;padding:8px 10px;overflow:auto;white-space:pre-wrap}
+.out code{background:#f4f4fa;border-radius:4px;padding:0 3px;font-family:ui-monospace,Consolas,monospace}
+.out blockquote{border-left:3px solid var(--line);margin:8px 0;padding:2px 12px;color:var(--muted)}
+.out table{border-collapse:collapse}
+.teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.team{border:1px solid var(--line);border-radius:12px;padding:8px 12px}
+.team h3{font-size:.95rem;margin:2px 0 6px}
+.team ul{margin:0;padding-left:18px}
+.tz{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);flex-wrap:wrap}
+.tz:last-child{border-bottom:0}
+.tz b{font-variant-numeric:tabular-nums}
+.notice{border-color:#fcd34d;background:#fffbeb}
+.faq-item h3{font-size:1rem;margin:12px 0 4px}
+.faq-item p{margin:0;color:#373a52}
+.src{font-size:.82rem;color:var(--muted)}
+.ad-box{max-width:1080px;margin:10px auto;padding:0 14px;background:transparent;overflow:hidden;text-align:center}
+.ad-top ins{max-height:90px}
+.footer{text-align:center;font-size:.85rem;color:var(--muted);padding:18px 14px 28px}
+.footer a{color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1e1b4b;color:#fff;padding:10px 18px;border-radius:999px;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .2s;z-index:50;max-width:90vw}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion: reduce){.toast{transition:none}}
+</style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
-    <!-- Header -->
-    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <span class="text-xl">📝</span>
-                <span class="font-black tracking-tight text-white text-lg">OfficePad US</span>
-            </div>
-            <div class="flex items-center gap-3">
-                <a href="/guides/guide.html" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 py-1.5 px-3 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/10 transition">Office Guide</a>
-                <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">100% Local Privacy</span>
-            </div>
+<body>
+<header class="header">
+  <h1>Office Text Scratchpad</h1>
+  <div class="header-sub">Markdown preview · text case · random teams · meeting times across time zones</div>
+</header>
+
+<!-- ADSENSE START: top -->
+<div class="ad-box ad-top">
+  <ins class="adsbygoogle" style="display:block;height:60px;max-height:90px" data-ad-client="ca-pub-2228289204702106" data-ad-slot="3824727725" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ADSENSE END: top -->
+
+<main class="wrap">
+  <div class="tabs" role="tablist" aria-label="Tools">
+    <button type="button" class="tab" role="tab" id="tab-md" aria-controls="p-md" aria-selected="true">Markdown pad</button>
+    <button type="button" class="tab" role="tab" id="tab-case" aria-controls="p-case" aria-selected="false">Text case</button>
+    <button type="button" class="tab" role="tab" id="tab-team" aria-controls="p-team" aria-selected="false">Random teams</button>
+    <button type="button" class="tab" role="tab" id="tab-tz" aria-controls="p-tz" aria-selected="false">Time zones</button>
+  </div>
+  <div class="grid2">
+    <section class="card" aria-labelledby="in-h">
+      <h2 id="in-h">1. Input</h2>
+      <div id="p-md" role="tabpanel" aria-labelledby="tab-md">
+        <label class="lbl" for="md">Markdown (saved in this browser)</label>
+        <textarea id="md" spellcheck="true"></textarea>
+        <div class="actions">
+          <button type="button" class="btn sm" data-md="**|**">Bold</button>
+          <button type="button" class="btn sm" data-md="*|*">Italic</button>
+          <button type="button" class="btn sm" data-md="## |">Heading</button>
+          <button type="button" class="btn sm" data-md="- |">List</button>
+          <button type="button" class="btn sm" data-md="- [ ] |">Task</button>
+          <button type="button" class="btn sm" data-md="`|`">Code</button>
+          <button type="button" class="btn sm" id="btn-clear">Clear draft</button>
+          <button type="button" class="btn sm" id="btn-undo" hidden>Undo clear</button>
         </div>
-    </header>
-
-    <!-- Top AdSense -->
-    <div class="manual-ad-box">
-        <ins class="adsbygoogle"
-             style="display:block;height:60px;max-height:60px;"
-             data-ad-client="ca-pub-2228289204702106"
-             data-ad-slot="3824727725"
-             data-ad-format="horizontal"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 py-6 flex-grow w-full">
-        <div class="text-center mb-8">
-            <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-2">Office Markdown Scratchpad & Text Utilities</h1>
-            <p class="text-slate-400 text-sm max-w-2xl mx-auto">Draft markdown, clean text cases, randomize agile team breakouts, and cross-reference global timezones in your browser.</p>
+      </div>
+      <div id="p-case" role="tabpanel" aria-labelledby="tab-case" hidden>
+        <label class="lbl" for="case-in">Text or names, one per line</label>
+        <textarea id="case-in" spellcheck="false" placeholder="Quarterly sales report&#10;userAccountId"></textarea>
+        <label class="lbl" for="case-mode">Convert to</label>
+        <select id="case-mode">
+          <option value="upper">UPPERCASE</option><option value="lower">lowercase</option><option value="title">Title Case</option>
+          <option value="sentence">Sentence case</option><option value="camel">camelCase</option><option value="pascal">PascalCase</option>
+          <option value="snake">snake_case</option><option value="kebab">kebab-case</option><option value="trim">Remove empty lines</option>
+        </select>
+      </div>
+      <div id="p-team" role="tabpanel" aria-labelledby="tab-team" hidden>
+        <label class="lbl" for="names">Names (one per line or separated by commas)</label>
+        <textarea id="names" spellcheck="false">Person A
+Person B
+Person C
+Person D
+Person E
+Person F</textarea>
+        <div class="row">
+          <div><label class="lbl" for="nteams">Number of teams</label><input id="nteams" type="text" inputmode="numeric" maxlength="3" value="2"></div>
+          <div style="align-self:flex-end"><button type="button" class="btn pri" id="btn-teams">🎲 Make teams</button></div>
         </div>
-
-        <!-- Navigation Tabs -->
-        <div class="flex flex-wrap gap-2 max-w-xl mx-auto mb-8 justify-center">
-            <button onclick="switchTab('markdown')" id="tabBtnMarkdown" class="py-2.5 px-4 bg-indigo-600 text-white font-bold rounded-xl text-xs sm:text-sm border border-indigo-500 transition shadow">Markdown Pad</button>
-            <button onclick="switchTab('case')" id="tabBtnCase" class="py-2.5 px-4 bg-slate-900 text-slate-300 hover:text-white font-bold rounded-xl text-xs sm:text-sm border border-slate-800 transition">Case Formatter</button>
-            <button onclick="switchTab('team')" id="tabBtnTeam" class="py-2.5 px-4 bg-slate-900 text-slate-300 hover:text-white font-bold rounded-xl text-xs sm:text-sm border border-slate-800 transition">Team Randomizer</button>
-            <button onclick="switchTab('timezone')" id="tabBtnTimezone" class="py-2.5 px-4 bg-slate-900 text-slate-300 hover:text-white font-bold rounded-xl text-xs sm:text-sm border border-slate-800 transition">Global Timezones</button>
+      </div>
+      <div id="p-tz" role="tabpanel" aria-labelledby="tab-tz" hidden>
+        <div class="row">
+          <div><label class="lbl" for="when">Meeting date and time</label><input id="when" type="datetime-local"></div>
+          <div><label class="lbl" for="zone">This time is in</label><select id="zone"></select></div>
         </div>
+        <p class="hint">Times and abbreviations such as EDT or EST come from your browser's time zone database for that date.</p>
+      </div>
+      <p class="err" id="err" role="alert" hidden></p>
+    </section>
 
-        <!-- 2-Column Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            <!-- Left Col -->
-            <div class="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-                <!-- Tab 1 -->
-                <div id="panelMarkdown" class="space-y-4">
-                    <div class="flex justify-between items-center">
-                        <label class="text-xs font-bold text-slate-300" for="markdownInput">Markdown Source (Autosaved locally)</label>
-                        <button onclick="clearMarkdown()" class="text-xs text-slate-400 hover:text-red-400">Clear</button>
-                    </div>
-                    <textarea id="markdownInput" oninput="renderMarkdown()" rows="12" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 text-base font-mono text-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none leading-relaxed" placeholder="# Start typing markdown..."></textarea>
-                    
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <button onclick="insertMd('**', '**')" class="px-3 py-1.5 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-lg text-slate-300 font-bold">Bold</button>
-                        <button onclick="insertMd('*', '*')" class="px-3 py-1.5 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-lg text-slate-300 italic">Italic</button>
-                        <button onclick="insertMd('## ', '')" class="px-3 py-1.5 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-lg text-slate-300">H2</button>
-                        <button onclick="insertMd('- ', '')" class="px-3 py-1.5 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-lg text-slate-300">List</button>
-                        <button onclick="insertMd('```\n', '\n```')" class="px-3 py-1.5 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-lg text-slate-300 font-mono">Code</button>
-                    </div>
-                </div>
+    <section class="card result" aria-labelledby="out-h">
+      <h2 id="out-h">2. <span id="out-title">Preview</span></h2>
+      <p class="stats" id="stats"></p>
+      <div class="out" id="out" aria-live="off"></div>
+      <p class="sr-only" id="sr-status" aria-live="polite"></p>
+      <div class="actions">
+        <button type="button" class="btn" id="btn-copy">📋 Copy result</button>
+        <button type="button" class="btn" id="btn-share">📤 Share</button>
+      </div>
+    </section>
+  </div>
 
-                <!-- Tab 2 -->
-                <div id="panelCase" class="space-y-4 hidden">
-                    <label class="text-xs font-bold text-slate-300" for="caseInput">Raw Input Text / Code Strings</label>
-                    <textarea id="caseInput" rows="8" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 text-base font-mono text-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none leading-relaxed" placeholder="Enter text or variable names to format..."></textarea>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-2">
-                        <button onclick="transformText('upper')" class="py-2.5 px-2 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-xl text-slate-300 font-semibold">UPPERCASE</button>
-                        <button onclick="transformText('lower')" class="py-2.5 px-2 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-xl text-slate-300 font-semibold">lowercase</button>
-                        <button onclick="transformText('camel')" class="py-2.5 px-2 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-xl text-slate-300 font-semibold">camelCase</button>
-                        <button onclick="transformText('snake')" class="py-2.5 px-2 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-xl text-slate-300 font-semibold">snake_case</button>
-                        <button onclick="transformText('kebab')" class="py-2.5 px-2 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-xl text-slate-300 font-semibold">kebab-case</button>
-                        <button onclick="transformText('trimLines')" class="py-2.5 px-2 bg-slate-950 border border-slate-800 hover:border-slate-700 text-xs rounded-xl text-slate-300 font-semibold">Trim Empty Lines</button>
-                    </div>
-                </div>
+<!-- ADSENSE START: mid (right after the result card) -->
+<div class="ad-box ad-mid">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2228289204702106" data-ad-slot="1186914926" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ADSENSE END: mid -->
 
-                <!-- Tab 3 -->
-                <div id="panelTeam" class="space-y-4 hidden">
-                    <label class="text-xs font-bold text-slate-300" for="teamMembers">Participant Roster (Line breaks or commas)</label>
-                    <textarea id="teamMembers" rows="7" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-4 text-base font-mono text-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none leading-relaxed">Jordan Smith
-Taylor Swift
-Morgan Freeman
-Alex Rivera
-Casey Jones
-Riley Miller</textarea>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-400 mb-1" for="teamCount">Number of Breakout Teams</label>
-                            <input type="number" id="teamCount" value="2" min="1" max="20" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-base text-white outline-none focus:ring-2 focus:ring-indigo-500">
-                        </div>
-                        <div class="flex items-end">
-                            <button id="generateTeamsBtn" id="generateTeamsBtn" onclick="generateRandomTeams()" class="h-12 w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl text-sm transition shadow">🎲 Generate Teams</button>
-                        </div>
-                    </div>
-                </div>
+  <section class="card" aria-labelledby="how-h">
+    <h2 id="how-h">🧮 How it works</h2>
+    <ul>
+      <li><strong>Markdown:</strong> your text is escaped first, then headings, emphasis, code, lists, quotes, rules and http/https links are formatted. Raw HTML is shown as text.</li>
+      <li><strong>Text case:</strong> each line is split into words at spaces, punctuation and lowercase-to-uppercase changes, then joined in the style you pick.</li>
+      <li><strong>Random teams:</strong> a Fisher-Yates shuffle using crypto.getRandomValues, then names are dealt into teams in turn.</li>
+      <li><strong>Time zones:</strong> the time you enter is read in the zone you choose and shown in each city with your browser's time zone data (IANA names such as America/New_York).</li>
+      <li><strong>Reading time:</strong> words ÷ 238 words per minute.</li>
+    </ul>
+    <p class="src">Reading speed source: Brysbaert, M. (2019). How many words do we read per minute? A review and meta-analysis of reading rate. Journal of Memory and Language, 109 (238 words per minute for English non-fiction).</p>
+  </section>
 
-                <!-- Tab 4 -->
-                <div id="panelTimezone" class="space-y-4 hidden">
-                    <label class="text-xs font-bold text-slate-300" for="baseTime">Select Meeting Time (New York / EDT Reference)</label>
-                    <input type="datetime-local" id="baseTime" onchange="calculateTimezones()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-base text-white outline-none focus:ring-2 focus:ring-indigo-500">
-                    <p class="text-xs text-slate-400">Instantly cross-references 5 major global financial and tech hubs against your chosen schedule.</p>
-                </div>
-            </div>
+  <section class="card" id="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">❓ Frequently asked questions</h2>
+    <div class="faq-item"><h3>Is my markdown draft saved?</h3><p>Yes, in this browser only. The draft is kept in your browser's local storage so it survives a refresh, and it is never sent anywhere. Press Clear draft to delete it; you can undo that right away.</p></div>
+    <div class="faq-item"><h3>Which markdown does the preview support?</h3><p>Headings, bold, italic, strikethrough, inline code, code blocks, bulleted, numbered and task lists, quotes, horizontal rules and links that start with http or https. Raw HTML is shown as plain text so nothing you paste can run on the page.</p></div>
+    <div class="faq-item"><h3>How are random teams made?</h3><p>The names are shuffled with the Fisher-Yates method using your browser's cryptographic random number generator, then dealt into the teams one by one, so team sizes differ by at most one.</p></div>
+    <div class="faq-item"><h3>How does the time zone converter handle daylight saving time?</h3><p>You choose the time zone the meeting time is written in, and each city's time and abbreviation, such as EDT or EST, come from your browser's time zone database for that exact date. If the time falls in a daylight saving gap or overlap, the page tells you.</p></div>
+    <div class="faq-item"><h3>How is reading time estimated?</h3><p>Reading time is the word count divided by 238 words per minute, the average silent reading rate for adults reading English non-fiction in a 2019 review of 190 studies by Marc Brysbaert.</p></div>
+  </section>
 
-            <!-- Right Col -->
-            <div class="lg:col-span-6 space-y-6 lg:sticky lg:top-20">
-                <div class="bg-slate-900 border-2 border-slate-800 rounded-2xl p-6 shadow-2xl space-y-4">
-                    <div class="flex justify-between items-center pb-3 border-b border-slate-800">
-                        <span id="outputTitle" class="text-sm font-bold text-indigo-400 uppercase tracking-wider">Live Preview / Output</span>
-                        <div id="outputStats" class="text-xs text-slate-400">Length: 0 chars | Words: 0</div>
-                    </div>
+  <section class="card notice" aria-labelledby="note-h">
+    <h2 id="note-h">⚠️ Please note</h2>
+    <p>The draft stays in this browser, so anyone using the same browser profile can see it. Clear it on shared computers. Always double-check meeting times with your calendar app before sending invitations.</p>
+  </section>
+</main>
 
-                    <!-- Output Container -->
-                    <div id="liveOutputContainer" class="min-h-[280px] max-h-[480px] overflow-y-auto p-4 bg-slate-950 rounded-xl border border-slate-800 text-slate-200 text-sm leading-relaxed prose prose-invert max-w-none">
-                        <!-- Dynamic render -->
-                    </div>
+<!-- ADSENSE START: bottom -->
+<div class="ad-box ad-bottom">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2228289204702106" data-ad-slot="3416334507" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- ADSENSE END: bottom -->
 
-                    <!-- Result Copy Button -->
-                    <div class="pt-4 border-t border-slate-800 flex justify-end">
-                        <button onclick="copyOutputResults()" class="h-11 px-5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl text-xs transition flex items-center gap-2 shadow">
-                            <span>📋</span> Copy Results
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<footer class="footer">
+  <p>A free office scratchpad. Your text stays in your browser.</p>
+  <p><a href="/disclaimer.html">Disclaimer</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a></p>
+</footer>
 
-        <!-- FAQ Section -->
-        <section class="mt-16 max-w-4xl mx-auto space-y-4">
-            <h2 class="text-xl font-bold text-white mb-6 text-center">Frequently Asked Questions (FAQ)</h2>
-            <details class="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer">
-                <summary class="font-bold text-white text-sm">Is my markdown draft preserved if I refresh or restart?</summary>
-                <p class="mt-3 text-xs text-slate-400 leading-relaxed">Yes. All keystrokes are automatically mirrored to your browser's local storage sandbox, ensuring immediate recovery even in unexpected shutdowns.</p>
-            </details>
-            <details class="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer">
-                <summary class="font-bold text-white text-sm">How does the team breakout generator ensure fair distribution?</summary>
-                <p class="mt-3 text-xs text-slate-400 leading-relaxed">The tool utilizes the mathematically unbiased Fisher-Yates shuffle algorithm to guarantee uniform probability and unbiased team rosters.</p>
-            </details>
-            <details class="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer">
-                <summary class="font-bold text-white text-sm">Is sensitive company copy safe to paste here?</summary>
-                <p class="mt-3 text-xs text-slate-400 leading-relaxed">100% yes. This application executes purely on the client side using pure JavaScript. Zero strings or rosters leave your browser.</p>
-            </details>
-        </section>
-    </main>
+<div id="global-ux-toast" class="toast" role="status" aria-live="polite"></div>
 
-    <!-- Bottom AdSense -->
-    <div class="manual-ad-box" style="margin: 24px auto 16px;">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2228289204702106"
-             data-ad-slot="3416334507"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+<!-- LOGIC START -->
+<script>
+(function () {
+  'use strict';
+  var SITE = 'https://us-office-text-scratchpad.enjoy-onepage.com';
+  var TOOL_NAME = 'Office Text Scratchpad';
+  var KEY = 'officepad_us_draft';
+  var WPM = 238;
+  var DEFAULT_DRAFT = '# Weekly planning\n\n## Goals\n- [ ] Review the launch checklist\n- [x] Book the team meeting\n\n## Notes\nWrite **markdown** on the left and see the preview here.';
+  var ZONES = [['America/New_York', 'New York'], ['America/Chicago', 'Chicago'], ['America/Denver', 'Denver'], ['America/Phoenix', 'Phoenix'],
+    ['America/Los_Angeles', 'Los Angeles'], ['America/Anchorage', 'Anchorage'], ['Pacific/Honolulu', 'Honolulu'], ['Europe/London', 'London'],
+    ['Europe/Paris', 'Paris'], ['Asia/Kolkata', 'India'], ['Asia/Tokyo', 'Tokyo'], ['Asia/Seoul', 'Seoul'], ['Australia/Sydney', 'Sydney'], ['UTC', 'UTC']];
+  var tab = 'md', last = '', cleared = null, toastTimer = null, srTimer = null;
+  function $(id) { return document.getElementById(id); }
+  function on(id, ev, fn) { var el = $(id); if (el) el.addEventListener(ev, fn); }
+  function el(tag, text, cls) { var e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (cls) e.className = cls; return e; }
+  function n(x) { return x.toLocaleString('en-US'); }
+  function err(msg) { var e = $('err'); e.hidden = !msg; e.textContent = msg || ''; }
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-800 bg-slate-950 py-6 text-center text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div>&copy; 2026 OfficePad US. 100% Serverless Local Productivity Engine.</div>
-            <div class="flex gap-4">
-                <a href="/guides/guide.html" class="hover:text-slate-400">Office Guide</a>
-                <a href="/privacy.html" class="hover:text-slate-400">Privacy Policy</a>
-                <a href="/terms.html" class="hover:text-slate-400">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Toast Notification -->
-    <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-5 py-2.5 rounded-xl shadow-2xl text-xs font-bold transition-all duration-300 opacity-0 pointer-events-none z-50">
-        Copied to clipboard!
-    </div>
-
-    <script>
-        let currentTab = 'markdown';
-        let latestPlainText = '';
-
-        function switchTab(tab) {
-            currentTab = tab;
-            const tabs = ['markdown', 'case', 'team', 'timezone'];
-            tabs.forEach(t => {
-                document.getElementById('panel' + t.charAt(0).toUpperCase() + t.slice(1)).classList.add('hidden');
-                document.getElementById('tabBtn' + t.charAt(0).toUpperCase() + t.slice(1)).className = 'py-2.5 px-4 bg-slate-900 text-slate-300 hover:text-white font-bold rounded-xl text-xs sm:text-sm border border-slate-800 transition';
-            });
-
-            document.getElementById('panel' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.remove('hidden');
-            document.getElementById('tabBtn' + tab.charAt(0).toUpperCase() + tab.slice(1)).className = 'py-2.5 px-4 bg-indigo-600 text-white font-bold rounded-xl text-xs sm:text-sm border border-indigo-500 transition shadow';
-
-            if (tab === 'markdown') {
-                renderMarkdown();
-            } else if (tab === 'case') {
-                document.getElementById('outputTitle').textContent = 'Case Conversion Output';
-            } else if (tab === 'team') {
-                document.getElementById('outputTitle').textContent = 'Team Randomizer Output';
-            } else if (tab === 'timezone') {
-                document.getElementById('outputTitle').textContent = 'Global Timezones';
-                calculateTimezones();
-            }
+  /* ---------- safe markdown: escape first, then format ---------- */
+  function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+  function inline(s) {
+    return esc(s).split(/(`[^`]+`)/).map(function (p) {
+      if (/^`[^`]+`$/.test(p)) return '<code>' + p.slice(1, -1) + '</code>';
+      return p.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" rel="noopener noreferrer nofollow" target="_blank">$1</a>')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+        .replace(/(^|[^*])\*([^*\s][^*]*)\*(?!\*)/g, '$1<em>$2</em>')
+        .replace(/~~([^~]+)~~/g, '<del>$1</del>');
+    }).join('');
+  }
+  function markdown(src) {
+    var lines = src.replace(/\r\n?/g, '\n').split('\n'), html = [], i = 0, para = [];
+    function flush() { if (para.length) { html.push('<p>' + para.map(inline).join(' ') + '</p>'); para = []; } }
+    while (i < lines.length) {
+      var ln = lines[i], m;
+      if (/^```/.test(ln)) {
+        flush(); var code = []; i++;
+        while (i < lines.length && !/^```/.test(lines[i])) code.push(lines[i++]);
+        i++; html.push('<pre><code>' + esc(code.join('\n')) + '</code></pre>'); continue;
+      }
+      if ((m = /^(#{1,6})\s+(.*)$/.exec(ln))) { flush(); html.push('<h' + m[1].length + '>' + inline(m[2]) + '</h' + m[1].length + '>'); i++; continue; }
+      if (/^\s*([-*_])(\s*\1){2,}\s*$/.test(ln)) { flush(); html.push('<hr>'); i++; continue; }
+      if (/^>\s?/.test(ln)) {
+        flush(); var q = [];
+        while (i < lines.length && /^>\s?/.test(lines[i])) q.push(lines[i++].replace(/^>\s?/, ''));
+        html.push('<blockquote>' + q.map(inline).join('<br>') + '</blockquote>'); continue;
+      }
+      if (/^\s*([-*+]|\d+[.)])\s+/.test(ln)) {
+        flush(); var ordered = /^\s*\d/.test(ln), items = [];
+        while (i < lines.length && /^\s*([-*+]|\d+[.)])\s+/.test(lines[i]) && /^\s*\d/.test(lines[i]) === ordered) {
+          var t = lines[i++].replace(/^\s*([-*+]|\d+[.)])\s+/, ''), box = /^\[( |x|X)\]\s+/.exec(t);
+          items.push('<li>' + (box ? (box[1] === ' ' ? '\u2610 ' : '\u2611 ') + inline(t.slice(box[0].length)) : inline(t)) + '</li>');
         }
+        html.push((ordered ? '<ol>' : '<ul>') + items.join('') + (ordered ? '</ol>' : '</ul>')); continue;
+      }
+      if (!ln.trim()) { flush(); i++; continue; }
+      para.push(ln.trim()); i++;
+    }
+    flush();
+    return html.join('\n');
+  }
+  function stats(text) {
+    var words = text.trim() ? text.trim().split(/\s+/).length : 0, secs = Math.round(words / WPM * 60);
+    var read = secs < 60 ? secs + ' s' : Math.floor(secs / 60) + ' min' + (secs % 60 ? ' ' + secs % 60 + ' s' : '');
+    return n(Array.from(text).length) + ' characters · ' + n(words) + (words === 1 ? ' word' : ' words') + ' · about ' + read + ' to read';
+  }
+  function renderMd() {
+    var v = $('md').value;
+    try { localStorage.setItem(KEY, v); } catch (e) { /* storage blocked: preview still works */ }
+    $('out').innerHTML = v.trim() ? markdown(v) : '<p class="hint">Start typing markdown to see the preview.</p>';
+    $('stats').textContent = stats(v);
+    last = v;
+  }
 
-        function renderMarkdown() {
-            const input = document.getElementById('markdownInput').value;
-            try {
-                localStorage.setItem('officepad_us_draft', input);
-            } catch(e) {}
+  /* ---------- text case ---------- */
+  function words(s) { return s.replace(/([a-z0-9])([A-Z])/g, '$1 $2').replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2').split(/[^A-Za-z0-9]+/).filter(Boolean); }
+  function cap(w) { return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase(); }
+  function convert(line, mode) {
+    if (mode === 'upper') return line.toUpperCase();
+    if (mode === 'lower') return line.toLowerCase();
+    if (mode === 'title') return line.toLowerCase().replace(/(^|[\s\-/(])([a-z])/g, function (a, b, c) { return b + c.toUpperCase(); });
+    if (mode === 'sentence') { var l = line.toLowerCase(); return l.replace(/^(\s*)([a-z])/, function (a, b, c) { return b + c.toUpperCase(); }); }
+    var w = words(line);
+    if (mode === 'camel') return w.map(function (x, i) { return i ? cap(x) : x.toLowerCase(); }).join('');
+    if (mode === 'pascal') return w.map(cap).join('');
+    if (mode === 'snake') return w.map(function (x) { return x.toLowerCase(); }).join('_');
+    return w.map(function (x) { return x.toLowerCase(); }).join('-');
+  }
+  function renderCase() {
+    var v = $('case-in').value, mode = $('case-mode').value, lines = v.replace(/\r\n?/g, '\n').split('\n');
+    var res = mode === 'trim' ? lines.filter(function (l) { return l.trim() !== ''; }).join('\n') : lines.map(function (l) { return convert(l, mode); }).join('\n');
+    var box = $('out'); box.textContent = '';
+    if (!v.trim()) { box.appendChild(el('p', 'Type or paste text on the left.', 'hint')); last = ''; $('stats').textContent = ''; return; }
+    box.appendChild(el('pre', res));
+    $('stats').textContent = n(Array.from(res).length) + ' characters';
+    last = res;
+  }
 
-            const len = input.length;
-            const words = input.trim() ? input.trim().split(/\s+/).length : 0;
-            const readMins = Math.ceil(words / 200) || 1;
-            document.getElementById('outputStats').textContent = `Length: ${len} | Words: ${words} | Read: ~${readMins}m`;
-            document.getElementById('outputTitle').textContent = 'Live Markdown Preview';
+  /* ---------- random teams ---------- */
+  function randInt(max) {
+    var lim = Math.floor(4294967296 / max) * max, a = new Uint32Array(1);
+    do { crypto.getRandomValues(a); } while (a[0] >= lim);
+    return a[0] % max;
+  }
+  function makeTeams() {
+    var names = $('names').value.split(/[\n,]+/).map(function (s) { return s.trim(); }).filter(Boolean);
+    var raw = $('nteams').value.trim(), k = /^\d+$/.test(raw) ? +raw : NaN;
+    if (!names.length) { err('Enter at least one name.'); return; }
+    if (!(k >= 1 && k <= 50)) { err('The number of teams must be a whole number from 1 to 50.'); return; }
+    if (k > names.length) { err('There are more teams (' + k + ') than names (' + names.length + '). Lower the number of teams.'); return; }
+    err('');
+    var s = names.slice();
+    for (var i = s.length - 1; i > 0; i--) { var j = randInt(i + 1), t = s[i]; s[i] = s[j]; s[j] = t; }
+    var teams = [];
+    for (i = 0; i < k; i++) teams.push([]);
+    s.forEach(function (name, idx) { teams[idx % k].push(name); });
+    var box = $('out'), grid = el('div', undefined, 'teams'), lines = [];
+    box.textContent = '';
+    teams.forEach(function (tm, idx) {
+      var c = el('div', undefined, 'team'), ul = el('ul');
+      c.appendChild(el('h3', 'Team ' + (idx + 1) + ' (' + tm.length + ')'));
+      tm.forEach(function (name) { ul.appendChild(el('li', name)); });
+      c.appendChild(ul); grid.appendChild(c);
+      lines.push('Team ' + (idx + 1) + ': ' + tm.join(', '));
+    });
+    box.appendChild(grid);
+    $('stats').textContent = n(names.length) + (names.length === 1 ? ' name' : ' names') + ' · ' + k + (k === 1 ? ' team' : ' teams');
+    last = lines.join('\n');
+  }
 
-            latestPlainText = input;
-            if (typeof marked !== 'undefined' && marked.parse) {
-                document.getElementById('liveOutputContainer').innerHTML = marked.parse(input || '*Start drafting markdown on the left to preview formatted HTML output here.*');
-            } else {
-                document.getElementById('liveOutputContainer').textContent = input;
-            }
-        }
+  /* ---------- time zones ---------- */
+  var FMT = {};
+  function parts(t, tz) {
+    var f = FMT[tz] || (FMT[tz] = new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }));
+    var o = {};
+    f.formatToParts(new Date(t)).forEach(function (p) { if (p.type !== 'literal') o[p.type] = +p.value; });
+    return o;
+  }
+  function wallUtc(p) { return Date.UTC(p.year, p.month - 1, p.day, p.hour % 24, p.minute); }
+  function offsetAt(t, tz) { return wallUtc(parts(t, tz)) - Math.floor(t / 60000) * 60000; }
+  /* Wall time in a zone -> instant. Offsets a day before and after cover any clock change near that time. */
+  function toInstant(y, mo, d, h, mi, tz) {
+    var want = Date.UTC(y, mo - 1, d, h, mi);
+    var a = want - offsetAt(want - 86400000, tz), b = want - offsetAt(want + 86400000, tz);
+    var okA = wallUtc(parts(a, tz)) === want, okB = wallUtc(parts(b, tz)) === want;
+    if (okA && okB) return a === b ? { t: a, note: '' } : { t: Math.min(a, b), note: 'overlap' };
+    if (okA || okB) return { t: okA ? a : b, note: '' };
+    return { t: Math.max(a, b), note: 'gap' };
+  }
+  function localZone() { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'; } catch (e) { return 'UTC'; } }
+  function renderTz() {
+    var v = $('when').value, m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})$/.exec(v), box = $('out');
+    box.textContent = '';
+    if (!m) { err('Pick a date and time.'); last = ''; $('stats').textContent = ''; return; }
+    err('');
+    var tz = $('zone').value, r = toInstant(+m[1], +m[2], +m[3], +m[4], +m[5], tz), lines = [];
+    var zname = $('zone').options[$('zone').selectedIndex].text;
+    if (r.note === 'gap') box.appendChild(el('p', 'That time is skipped in ' + zname + ' when the clocks move forward, so it is shown as the matching time after the change.', 'err'));
+    if (r.note === 'overlap') box.appendChild(el('p', 'That time happens twice in ' + zname + ' because the clocks fall back. Showing the first one.', 'hint'));
+    var show = ZONES.slice(), me = localZone();
+    if (!show.some(function (z) { return z[0] === me; })) show.unshift([me, 'Your time zone']);
+    show.forEach(function (z) {
+      var s = new Date(r.t).toLocaleString('en-US', { timeZone: z[0], weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+      var row = el('div', undefined, 'tz');
+      row.appendChild(el('span', z[1] + (z[0] === me ? ' (you)' : '')));
+      row.appendChild(el('b', s));
+      box.appendChild(row);
+      lines.push(z[1] + ': ' + s);
+    });
+    $('stats').textContent = 'Meeting time read in ' + zname;
+    last = lines.join('\n');
+  }
 
-        function insertMd(before, after) {
-            const ta = document.getElementById('markdownInput');
-            const start = ta.selectionStart;
-            const end = ta.selectionEnd;
-            const text = ta.value;
-            const sel = text.substring(start, end) || 'text';
-            ta.value = text.substring(0, start) + before + sel + after + text.substring(end);
-            ta.focus();
-            ta.setSelectionRange(start + before.length, start + before.length + sel.length);
-            renderMarkdown();
-        }
+  /* ---------- tabs, copy, share ---------- */
+  var TITLES = { md: 'Preview', 'case': 'Converted text', team: 'Teams', tz: 'Meeting time around the world' };
+  function show(t) {
+    tab = t; err('');
+    ['md', 'case', 'team', 'tz'].forEach(function (k) { $('p-' + k).hidden = k !== t; $('tab-' + k).setAttribute('aria-selected', k === t ? 'true' : 'false'); });
+    $('out-title').textContent = TITLES[t];
+    if (t === 'md') renderMd(); else if (t === 'case') renderCase(); else if (t === 'tz') renderTz();
+    else { $('out').textContent = ''; $('out').appendChild(el('p', 'Enter names and press Make teams.', 'hint')); $('stats').textContent = ''; last = ''; }
+  }
+  function showToastNotification(msg) {
+    var t = $('global-ux-toast'); if (!t) return;
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.classList.remove('show'); }, 2200);
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    showToastNotification(ok ? 'Copied! Paste it anywhere to share.' : 'Could not copy. Please select the text and copy it yourself.');
+  }
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { showToastNotification('Copied! Paste it anywhere to share.'); }, function () { fallbackCopy(text); });
+    } else { fallbackCopy(text); }
+  }
+  function payload() { return last + '\n👉 ' + TOOL_NAME + ': ' + SITE + '/'; }
+  function announce(msg) { clearTimeout(srTimer); srTimer = setTimeout(function () { $('sr-status').textContent = msg; }, 1000); }
 
-        function clearMarkdown() {
-            if (confirm('Clear current draft?')) {
-                document.getElementById('markdownInput').value = '';
-                renderMarkdown();
-            }
-        }
+  ['md', 'case', 'team', 'tz'].forEach(function (k) { on('tab-' + k, 'click', function () { show(k); }); });
+  on('md', 'input', function () { if (cleared !== null && $('md').value) { cleared = null; $('btn-undo').hidden = true; } renderMd(); announce('Preview updated.'); });
+  document.querySelectorAll('[data-md]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var pr = b.getAttribute('data-md').split('|'), ta = $('md'), s = ta.selectionStart, e = ta.selectionEnd, sel = ta.value.slice(s, e) || 'text';
+      ta.value = ta.value.slice(0, s) + pr[0] + sel + pr[1] + ta.value.slice(e);
+      ta.focus(); ta.setSelectionRange(s + pr[0].length, s + pr[0].length + sel.length); renderMd();
+    });
+  });
+  on('btn-clear', 'click', function () {
+    if (!$('md').value) return;
+    cleared = $('md').value; $('md').value = ''; $('btn-undo').hidden = false;
+    renderMd(); showToastNotification('Draft cleared. Press Undo clear to bring it back.');
+  });
+  on('btn-undo', 'click', function () { if (cleared === null) return; $('md').value = cleared; cleared = null; $('btn-undo').hidden = true; renderMd(); });
+  on('case-in', 'input', renderCase);
+  on('case-mode', 'change', renderCase);
+  on('btn-teams', 'click', makeTeams);
+  on('when', 'change', renderTz);
+  on('when', 'input', renderTz);
+  on('zone', 'change', renderTz);
+  on('btn-copy', 'click', function () { if (!last) { showToastNotification('There is nothing to copy yet.'); return; } copyText(payload()); });
+  on('btn-share', 'click', function () {
+    if (!last) { showToastNotification('There is nothing to share yet.'); return; }
+    var text = payload();
+    if (navigator.share) { navigator.share({ title: TOOL_NAME, text: text, url: SITE + '/' }).catch(function (e) { if (!e || e.name !== 'AbortError') copyText(text); }); }
+    else { copyText(text); }
+  });
 
-        function transformText(type) {
-            const val = document.getElementById('caseInput').value;
-            let res = '';
-            if (type === 'upper') res = val.toUpperCase();
-            else if (type === 'lower') res = val.toLowerCase();
-            else if (type === 'camel') {
-                res = val.replace(/([-_\s][a-z])/ig, ($1) => $1.toUpperCase().replace(/[-_\s]/g, ''));
-                res = res.charAt(0).toLowerCase() + res.slice(1);
-            } else if (type === 'snake') {
-                res = val.replace(/\s+/g, '_').replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase();
-            } else if (type === 'kebab') {
-                res = val.replace(/\s+/g, '-').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-            } else if (type === 'trimLines') {
-                res = val.split('\n').filter(line => line.trim() !== '').join('\n');
-            }
-
-            latestPlainText = res;
-            document.getElementById('liveOutputContainer').innerHTML = `<pre class="font-mono text-sm whitespace-pre-wrap">${res}</pre>`;
-            document.getElementById('outputStats').textContent = `Result: ${res.length} chars`;
-        }
-
-        function generateRandomTeams() {
-            const raw = document.getElementById('teamMembers').value;
-            const members = raw.split(/[\n,]+/).map(m => m.trim()).filter(m => m.length > 0);
-            const numTeams = parseInt(document.getElementById('teamCount').value.replace(/,/g, '')) || 2;
-
-            if (members.length === 0) {
-                alert('Please enter at least 1 team member name.');
-                return;
-            }
-
-            const shuffled = [...members];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
-
-            const teams = Array.from({ length: numTeams }, () => []);
-            shuffled.forEach((m, idx) => {
-                teams[idx % numTeams].push(m);
-            });
-
-            let html = '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">';
-            let textRep = `[Team Randomizer Results]\nParticipants: ${members.length} (${numTeams} Teams)\n\n`;
-
-            teams.forEach((t, i) => {
-                textRep += `[Team ${i + 1}] (${t.length}): ${t.join(', ')}\n`;
-                html += `
-                <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
-                    <div class="text-xs font-bold text-indigo-400 mb-2">Team ${i + 1} (${t.length} Members)</div>
-                    <ul class="text-sm space-y-1 text-slate-200">
-                        ${t.map(name => `<li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>${name}</li>`).join('')}
-                    </ul>
-                </div>`;
-            });
-            html += '</div>';
-
-            latestPlainText = textRep;
-            document.getElementById('liveOutputContainer').innerHTML = html;
-            document.getElementById('outputStats').textContent = `Total: ${members.length} members / ${numTeams} teams`;
-        }
-
-        function calculateTimezones() {
-            const inputVal = document.getElementById('baseTime').value;
-            const date = inputVal ? new Date(inputVal) : new Date();
-
-            const zones = [
-                { name: 'New York (EDT / Base)', tz: 'America/New_York', flag: '🇺🇸' },
-                { name: 'San Francisco (PDT)', tz: 'America/Los_Angeles', flag: '🇺🇸' },
-                { name: 'London (BST/GMT)', tz: 'Europe/London', flag: '🇬🇧' },
-                { name: 'Tokyo (JST)', tz: 'Asia/Tokyo', flag: '🇯🇵' },
-                { name: 'Seoul (KST)', tz: 'Asia/Seoul', flag: '🇰🇷' }
-            ];
-
-            let html = '<div class="space-y-3">';
-            let textRep = `[Global Multi-Hub Timezone Sync]\nBase Schedule: ${date.toLocaleString('en-US')}\n\n`;
-
-            zones.forEach(z => {
-                const localized = date.toLocaleString('en-US', { timeZone: z.tz, dateStyle: 'full', timeStyle: 'short' });
-                textRep += `${z.flag} ${z.name}: ${localized}\n`;
-                html += `
-                <div class="flex items-center justify-between p-3 bg-slate-900 border border-slate-800 rounded-xl">
-                    <div class="flex items-center gap-2">
-                        <span class="text-lg">${z.flag}</span>
-                        <span class="text-xs font-bold text-slate-300">${z.name}</span>
-                    </div>
-                    <div class="text-xs font-mono font-bold text-indigo-300">${localized}</div>
-                </div>`;
-            });
-            html += '</div>';
-
-            latestPlainText = textRep;
-            document.getElementById('liveOutputContainer').innerHTML = html;
-            document.getElementById('outputStats').textContent = '5 Major Hubs Calculated';
-        }
-
-        function showToastNotification(msg) {
-            const toast = document.getElementById('toastNotification');
-            toast.textContent = msg;
-            toast.classList.remove('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'pointer-events-none');
-            }, 2200);
-        }
-
-        const defaultDraft = `# Weekly Sprint Planning Draft
-
-## 1. Key Objectives
-- [ ] Validate new client-side web utility suite
-- [ ] Align cross-timezone team standup rhythm
-
-## 2. Execution Notes
-All text operations execute 100% serverless within local browser memory.`;
-
-        try {
-            const saved = localStorage.getItem('officepad_us_draft');
-            document.getElementById('markdownInput').value = saved || defaultDraft;
-        } catch(e) {
-            document.getElementById('markdownInput').value = defaultDraft;
-        }
-
-        const now = new Date();
-        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
-        document.getElementById('baseTime').value = now.toISOString().slice(0, 16);
-
-        
-        function fallbackCopy(text, msg) {
-            const ta = document.createElement('textarea');
-            ta.value = text;
-            ta.style.position = 'fixed';
-            ta.style.opacity = '0';
-            document.body.appendChild(ta);
-            ta.select();
-            try {
-                document.execCommand('copy');
-            } catch(e) {}
-            document.body.removeChild(ta);
-            showToastNotification(msg);
-        }
-
-        function copyOutputResults() {
-            const msg = 'Copied to clipboard!';
-            const text = latestPlainText + `\n\n👉 URL: ${window.location.href}`;
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text)
-                    .then(() => showToastNotification(msg))
-                    .catch(() => fallbackCopy(text, msg));
-            } else {
-                fallbackCopy(text, msg);
-            }
-        }
-
-        renderMarkdown();
-    </script>
+  (function init() {
+    var me = localZone(), sel = $('zone'), mine = document.createElement('option');
+    mine.value = me; mine.textContent = 'My time zone (' + me.replace(/_/g, ' ') + ')'; sel.appendChild(mine);
+    ZONES.forEach(function (z) { if (z[0] !== me) { var o = document.createElement('option'); o.value = z[0]; o.textContent = z[1]; sel.appendChild(o); } });
+    var d = new Date(); d.setSeconds(0, 0); d.setMinutes(Math.ceil(d.getMinutes() / 30) * 30);
+    var p = parts(d.getTime(), me), pad = function (x) { return (x < 10 ? '0' : '') + x; };
+    $('when').value = p.year + '-' + pad(p.month) + '-' + pad(p.day) + 'T' + pad(p.hour % 24) + ':' + pad(p.minute);
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) { saved = null; }
+    $('md').value = saved !== null ? saved : DEFAULT_DRAFT;
+    show('md');
+  })();
+})();
+</script>
+<!-- LOGIC END -->
 </body>
 </html>
